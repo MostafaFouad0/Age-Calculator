@@ -25,13 +25,22 @@ function updateError(validyear, validmonth, validday) {
 }
 
 function showResult(month, year, day) {
-  const birthDateObj = new Date(year, month, day);
-  const today = new Date();
-  const ageInMs = today.getTime() - birthDateObj.getTime();
-  const ageDate = new Date(ageInMs);
-  const years = String(ageDate.getUTCFullYear() - 1970);
-  const months = String(ageDate.getUTCMonth());
-  const days = String(ageDate.getUTCDate() - 1);
+  var dd = DATE.getDate();
+  var m = DATE.getMonth() + 1;
+  var yy = DATE.getFullYear();
+  var monthss = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if (day > dd) {
+    dd += monthss[month - 1];
+    m--;
+  }
+  if (month > m) {
+    yy--;
+    m += 12;
+  }
+  const days = dd - day;
+  const months = m - month;
+  const years = yy - year;
   document.getElementById("yrr").textContent = years;
   document.getElementById("mnth").textContent = months;
   document.getElementById("dys").textContent = days;
@@ -75,7 +84,7 @@ function validMonth(month) {
 function validYear(year) {
   if (year.length == 0) return false;
   if (hasCharacters(year)) return false;
-  if (year > DATE.getFullYear() || year <= 0 || year < 100) return false;
+  if (year >= DATE.getFullYear() || year <= 0 || year < 100) return false;
 
   return true;
 }
