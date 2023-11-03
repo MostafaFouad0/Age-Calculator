@@ -84,7 +84,7 @@ function validMonth(month) {
 function validYear(year) {
   if (year.length == 0) return false;
   if (hasCharacters(year)) return false;
-  if (year >= DATE.getFullYear() || year <= 0 || year < 100) return false;
+  if (year > DATE.getFullYear() || year <= 0 || year < 100) return false;
 
   return true;
 }
