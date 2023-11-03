@@ -1,0 +1,125 @@
+body {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  margin-top: 2rem;
+  background: hsl(0, 0%, 94%);
+}
+h3 {
+  margin: 0 0 0.5rem 0;
+  color: hsl(0, 1%, 44%);
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  font-weight: 800;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  max-width: 100%;
+}
+.arrow-icon-container {
+  padding: 10px;
+  background: hsl(259, 100%, 65%);
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  right: 4px;
+  top: 5px;
+}
+.input {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: fit-content;
+}
+.arrow-icon-container:hover {
+  background: hsl(0, 0%, 8%);
+  cursor: pointer;
+}
+img {
+  position: relative;
+  top: 15%;
+}
+.line-break {
+  height: 2px;
+  width: 70%;
+  display: inline-block;
+  background: hsl(0, 0%, 86%);
+}
+.component {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+}
+.in {
+  margin-right: 1rem;
+  width: 50%;
+}
+p {
+  color: hsl(0, 100%, 67%);
+  font-size: 0.81rem;
+  font-style: italic;
+}
+input {
+  padding: 15px;
+  border: 1px solid hsl(0, 0%, 86%);
+  border-radius: 5px;
+  max-width: 130px;
+  font-size: 100%;
+  font-weight: 800;
+}
+.first {
+  margin-top: 1rem;
+}
+h1 {
+  font-size: 5.5em;
+  font-weight: 800;
+  font-style: italic;
+  margin: 0;
+}
+.output {
+  color: hsl(259, 100%, 65%);
+  margin-right: 1rem;
+}
+.all {
+  padding: 60px;
+  border-radius: 15px;
+  width: 50%;
+  border-bottom-right-radius: 200px;
+  background: white;
+}
+.age {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+@media screen and (max-width: 615px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+  .error {
+    font-size: 0.5rem;
+  }
+  .input {
+    height: 90px;
+  }
+  .line-break {
+    width: 100%;
+  }
+  img {
+    width: 32px;
+    height: 32px;
+    top: 0;
+  }
+  .arrow-icon-container {
+    width: 32px;
+    height: 32px;
+    /* right: 45%; */
+  }
+}

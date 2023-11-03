@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="all">
+        <div class="input">
+          <div class="component">
+            <h3>DAY</h3>
+            <input type="text" placeholder="DD" class="in" id="dy" />
+            <p id="error-day" class="error"></p>
+          </div>
+          <div class="component">
+            <h3>MONTH</h3>
+            <input type="text" placeholder="MM" class="in" id="mon" />
+            <p id="error-month" class="error"></p>
+          </div>
+          <div class="component">
+            <h3>YEAR</h3>
+            <input type="text" placeholder="YYYY" class="in" id="yr" />
+            <p id="error-year" class="error"></p>
+          </div>
+        </div>
+        <div class="line-break"></div>
+        <div class="arrow-icon-container" id="btn">
+          <img src="./assets/images/icon-arrow.svg" alt="arrow-icon" />
+        </div>
+        <div class="age">
+          <h1><span id="yrr" class="output" class="first">- - </span>years</h1>
+          <h1><span id="mnth" class="output">- - </span>months</h1>
+          <h1><span id="dys" class="output">- - </span>days</h1>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
