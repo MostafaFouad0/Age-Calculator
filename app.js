@@ -1,4 +1,5 @@
-var DATE = new Date();
+const DATE = new Date();
+const days_in_each_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 function updateError(validyear, validmonth, validday) {
   if (!validyear) {
@@ -25,38 +26,40 @@ function updateError(validyear, validmonth, validday) {
 }
 
 function showResult(month, year, day) {
-  var dd = DATE.getDate();
-  var m = DATE.getMonth() + 1;
-  var yy = DATE.getFullYear();
-  var monthss = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  const currentDay = DATE.getDate();
+  const currentMonth = DATE.getMonth() + 1;
+  const currentYear = DATE.getFullYear();
 
-  if (day > dd) {
-    dd += monthss[month - 1];
-    m--;
+  if (day > currentDay) {
+    currentDay += days_in_each_month[month - 1];
+    currentMonth--;
   }
-  if (month > m) {
-    yy--;
-    m += 12;
+  if (month > currentMonth) {
+    currentYear--;
+    currentMonth += 12;
   }
-  const days = dd - day;
-  const months = m - month;
-  const years = yy - year;
+  const days = currentDay - day;
+  const months = currentMonth - month;
+  const years = currentYear - year;
   document.getElementById("yrr").textContent = years;
   document.getElementById("mnth").textContent = months;
   document.getElementById("dys").textContent = days;
 }
-document.getElementById("btn").addEventListener("click", function () {
-  const day = document.getElementById("dy").value;
-  const month = document.getElementById("mon").value;
-  const year = document.getElementById("yr").value;
-  var validyear = validYear(year);
-  var validmonth = validMonth(month);
-  var validday = validDay(day, month, year);
-  const allGood = updateError(validyear, validmonth, validday);
-  if (allGood) {
-    showResult(month, year, day);
-  }
-});
+
+function APP() {
+  document.getElementById("btn").addEventListener("click", function () {
+    const day = document.getElementById("dy").value;
+    const month = document.getElementById("mon").value;
+    const year = document.getElementById("yr").value;
+    const validyear = validYear(year);
+    const validmonth = validMonth(month);
+    const validday = validDay(day, month, year);
+    const allGood = updateError(validyear, validmonth, validday);
+    if (allGood) {
+      showResult(month, year, day);
+    }
+  });
+}
 
 function hasCharacters(input) {
   for (var i = 0; i < input.length; i++) {
@@ -104,3 +107,5 @@ function validDay(day, month, year) {
   if (!isLeapYear(year) && month === 2 && day > 28) return false;
   return true;
 }
+
+APP();
