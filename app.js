@@ -48,12 +48,12 @@ function showResult(month, year, day) {
 
 function APP() {
   document.getElementById("btn").addEventListener("click", function () {
-    const day = document.getElementById("dy").value;
-    const month = document.getElementById("mon").value;
-    const year = document.getElementById("yr").value;
-    const validyear = validYear(year);
-    const validmonth = validMonth(month);
-    const validday = validDay(day, month, year);
+    var day = document.getElementById("dy").value;
+    var month = document.getElementById("mon").value;
+    var year = document.getElementById("yr").value;
+    var validyear = validYear(year);
+    var validmonth = validMonth(month);
+    var validday = validDay(day, month, year);
     const allGood = updateError(validyear, validmonth, validday);
     if (allGood) {
       showResult(month, year, day);
