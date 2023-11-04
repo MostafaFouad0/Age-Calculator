@@ -26,9 +26,9 @@ function updateError(validyear, validmonth, validday) {
 }
 
 function showResult(month, year, day) {
-  const currentDay = DATE.getDate();
-  const currentMonth = DATE.getMonth() + 1;
-  const currentYear = DATE.getFullYear();
+  var currentDay = DATE.getDate();
+  var currentMonth = DATE.getMonth() + 1;
+  var currentYear = DATE.getFullYear();
 
   if (day > currentDay) {
     currentDay += days_in_each_month[month - 1];
@@ -38,9 +38,9 @@ function showResult(month, year, day) {
     currentYear--;
     currentMonth += 12;
   }
-  const days = currentDay - day;
-  const months = currentMonth - month;
-  const years = currentYear - year;
+  var days = currentDay - day;
+  var months = currentMonth - month;
+  var years = currentYear - year;
   document.getElementById("yrr").textContent = years;
   document.getElementById("mnth").textContent = months;
   document.getElementById("dys").textContent = days;
